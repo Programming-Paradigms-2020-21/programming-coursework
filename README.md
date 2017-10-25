@@ -98,6 +98,9 @@ Remember that clarity and conciseness are highly correlated. In other words, sho
 (but not always) easier to understand than long programs. 
 Your goal should almost always be to write the clearest, most easily understandable program that you can.
 
+As this is the *Polyglot* coursework we would like to see a good hybrid solution, drawing on the best of the
+object-oriented, and functional, programming paradigms. 
+
 There are some things you should know about Kotlin style. While we will not be grading on Kotlin-specific style, 
 you will find that your program is easier to write and debug if you make some attempt to follow these suggestions.
 
