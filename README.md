@@ -1,15 +1,23 @@
-# Polyglot Programming Coursework
+# Programming Coursework
 
-To be completed using the Kotlin programming language.
-----
-
-## Purposes of this assignment:
-- Provide you with more experience of using the Kotlin programming language. 
-- Give you further exposure to the (so called) polyglot programming paradigm. 
-- Familiarise you with (some of) the Kotlin API.
+## Purposes of this assignment
+- Provide you with more experience of using the various programming languages introduced in the module. 
+- Give you further exposure to  (so called) polyglot programming paradigm. 
+- Familiarise you with (some of) the language APIs.
+- To give you practice developing appropriate tests for a given problem.
 - To provide a bit of fun...
 
+## Language requirements
+
+You are required to produce two solutions to the following problem. 
+
+1. One will use either `Kotlin` or `Golang`. 
+2. The other solution will use either `Racket` or `Haskell`. 
+
+In both cases idiomatic programming styles for the particular langauge must be followed (i.e., no procedural code in a Racket solution - you must follow the ideas and principles of the functional programming paradigm).
+
 ## Overview
+
 Write a program to read in, and solve, path-finding puzzles. A puzzle consists of an N × N array of integers:
 
 ![Puzzle](board.png "Puzzle board")
@@ -22,6 +30,7 @@ The problem is as follows:
 3. From each location in the array you may move *left*, *right*, *up*, or *down*; the number in the 
    location tells you exactly how far to move.
    
+
 For example, with the board configuration shown above, location (0, 0) contains a 7, so from that position 
 you must move exactly seven squares, either to the *right* or *down* (you are not allowed to move off of the board).
 
@@ -41,7 +50,7 @@ Right Down Down Up Left Left Down Right Right Up Down Right Down
 
 You **can** assume:
 
-- The puzzle is square (not just rectangular).
+- The puzzle is square.
 - The number at position 0, 0 is non-zero.
 - There are no negative numbers in the puzzle.
 - There is at least one solution.
@@ -56,8 +65,9 @@ You **must not** assume:
 
 *Please note*: You are not allowed to change the numbers in the array.
 
-Use `Puzzle` as the name of the object containing your `main` function. Use additional
-classes, objects, and methods as you see fit.
+## Testing
+
+You should follow a TDD/BDD approach to the two solutions. You should provide a comprehensive set of unit tests for your code.
 
 ## Solution
 
@@ -73,22 +83,17 @@ examined in the logic programming section of the module (hence, don't start the 
   At each choice point, go all possible ways, and keep track of all the paths that result.
   Stop exploring any path from which you cannot move, or which takes you to a previous location along this path.
   
-You should provide a comprehensive set of unit tests for your code.
 
 
 ## Notes
 
-You should use a `JFileChooser` to *read in* the puzzle; we want to see interoperability with Java.
-There is a `chooseFile` function in the provided files that you can use as a model.
-The input file will consist of `n` lines, where each line represents a single row. 
-Each line will contain `n` non-negative integers, separated by single spaces, with no leading or trailing spaces.
+- You should read in the puzzle from a file.
+- The input file will consist of `n` lines, where each line represents a single row. 
+  Each line will contain `n` non-negative integers, separated by single spaces, with no leading or trailing spaces.
+- You should write your program to solve one puzzle and then quit; there is no need to ask the user whether  s/he wishes to solve additional puzzles.
+- The solution should be printed out in one of the two formats shown above (your choice).
 
-You should write your program to solve one puzzle and then quit; there is no need to ask the user whether 
-s/he wishes to solve additional puzzles.
-You are not required to use a Kotlin `Array`; feel free to use a `List` or any other data structure that you prefer.
-The solution should be printed out in one of the two formats shown above (your choice).
-
-As always, ensure you have a regular and complete commit history for each repository.
+As always, ensure you have a regular and complete commit history for your repository.
 
 ## Additional grading considerations
 
@@ -98,21 +103,7 @@ Remember that clarity and conciseness are highly correlated. In other words, sho
 (but not always) easier to understand than long programs. 
 Your goal should almost always be to write the clearest, most easily understandable program that you can.
 
-As this is the *Polyglot* coursework we would like to see a good hybrid solution, drawing on the best of the
-object-oriented, and functional, programming paradigms. 
-
-There are some things you should know about Kotlin style. While we will not be grading on Kotlin-specific style, 
-you will find that your program is easier to write and debug if you make some attempt to follow these suggestions.
-
-- Use `val` rather than `var` whenever possible.
-- Prefer recursion to loops.
-- Prefer calls of *higher-order-functions* to recursion.
-- Use *null safety* except when interacting with Java classes/libraries. 
-- Prefer `when` to nested `if` statements.
-
 ## Credits
 
-The specification for this coursework was developed with, and based upon, an original assignment by David Matuszek, 
-at the University of Pennsylvania, which, I believe, is based upon a coursework from Stanford, which is 
-based upon a coursework from . . .
+The specification for this coursework was developed with, and based upon, an original assignment by David Matuszek,  at the University of Pennsylvania, which, I believe, is based upon a coursework from Stanford, which is based upon a coursework from . . .
 
